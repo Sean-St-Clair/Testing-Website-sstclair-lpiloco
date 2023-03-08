@@ -9,7 +9,7 @@ num_incorrect = int(sys.argv[1])
 file = open("test_cases.cpp", "r")
 # Change the token on the next line to your token.
 # Record your token in your README file.
-if file.readline().strip() != "mellon":
+if file.readline().strip() != "// mellon":
     # The token does not match. Print HTML message and exit.
     print("<p>You do not have the secret token. Do not pass Go. Do not collect $200.</p>")
     file.close()
