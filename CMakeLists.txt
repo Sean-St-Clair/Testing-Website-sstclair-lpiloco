@@ -3,4 +3,4 @@ project(TestingWebsite)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(TestingWebsite test_cases.cpp)
+add_executable(TestingWebsite test_cases.cpp moo_correct.cpp moo_incorrect1.cpp)
