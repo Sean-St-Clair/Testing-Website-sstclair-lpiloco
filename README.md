@@ -77,7 +77,7 @@ Note that this guided project is worth 30 points instead of the usual 20 points.
 - [ ] (2 pts) GitHub setup. All necessary files are in the repository.
 - [ ] (1 pt) Good, consistent coding style that matches starter code.
 - [ ] (1 pt) Share website URL.
-- [ ] (1 pt) Share secret token.
+- [ ] (1 pt) Share secret token. -> mellon 
 - [ ] (10 pts) Correct implementation and 20+ different incorrect implementations.
 - [ ] (5 pts) test_cases.cpp with testing suite that catches all bugs.
 - [ ] (10 pts) Website functions correctly.
