@@ -43,36 +43,67 @@ bool test_moo() {
         passed = false;
     }
     // 2 - Starts with an m
+    if (mooIsValid("noo")) {
+        cout << "FAILED 'Starts with an m' test case" << endl;
+        passed = false;
+    }
+
     // 3 - Ends with an o
     if (mooIsValid("moe")) {
         cout << "FAILED 'ends with an o' test case" << endl;
         passed = false;
     }
     // 4 - Contains at least 2 o's
+    if (mooIsValid("mo")) {
+        cout << "FAILED 'Contains at least 2 o's' test case" << endl;
+        passed = false;
+    }
+
     // 5 - No numbers
     if (mooIsValid("moo1")) {
         cout << "FAILED 'No numbers' test case" << endl;
         passed = false;
     }
     // 6 - No special characters
+    if (mooIsValid("$moo")) {
+        cout << "FAILED 'No special characters' test case" << endl;
+        passed = false;
+    }
+
     // 7 - If the M is capital, the rest can be any case, otherwise must all be lowercase
     if (mooIsValid("mOo")) {
         cout << "FAILED 'M is lowercase, all be lowercase' test case" << endl;
         passed = false;
     }
     // 8 - Even number of o's
+    if (mooIsValid("mooo")) {
+        cout << "FAILED 'Even number of o's' test case" << endl;
+        passed = false;
+    }
+
     // 9 - Capital o's have to precede lowercase o's
     if (mooIsValid("moO")) {
         cout << "FAILED 'Capital o's have to precede lowercase o's' test case" << endl;
         passed = false;
     }
     // 10 - Even number of capital o's
+    if (mooIsValid("MOoo")) {
+        cout << "FAILED 'Even number of o's' test case" << endl;
+        passed = false;
+    }
+
+    // 11 - All m's have to occur at the beginning
     // 11 - All m's have to occur at the beginning of the string
     if (mooIsValid("omo")) {
         cout << "FAILED 'All m's have to occur at the beginning of the string' test case" << endl;
         passed = false;
     }
     // 12 - Either all lowercase or all capital m's
+    if (mooIsValid("Mmoo")) {
+        cout << "FAILED 'Either all lowercase or all capital m's' test case 1" << endl;
+        passed = false;
+    }
+
     // 13 - Strictly odd-number of m's
     if (mooIsValid("mmoo")) {
         cout << "FAILED 'Strictly odd-number of m's' test case" << endl;
