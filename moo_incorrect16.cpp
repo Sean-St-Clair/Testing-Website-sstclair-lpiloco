@@ -7,7 +7,7 @@
 using namespace std;
 
 bool mooIsValid(string moo) {
-    bool valid = true;
+    bool valid = false; // FIXME:     bool valid = true;
     // Lowercase version of moo useful for testing quantities of m's or o's
     string lowerMoo = "";
     for (char c: moo) {
@@ -81,7 +81,7 @@ bool mooIsValid(string moo) {
 
     // 9  - Capital o's have to precede lowercase o's
     int lowerOIndex = 0;
-    if (moo.find('o') == string::npos) { // FIXME:     if (moo.find('o') != string::npos) {
+    if (moo.find('o') != string::npos) {
         lowerOIndex = moo.find('o');
         if (moo.find('O', lowerOIndex) != string::npos) {
             valid = false;
