@@ -37,12 +37,18 @@ int main() {
 bool test_moo() {
     bool passed = true;
 
+    // Testing if moo is valid
+    if (!mooIsValid("moo")) {
+        cout << "FAILED 'moo' test case" << endl;
+        passed = false;
+    }
+
     // 1 - A moo is not the empty string
     if (mooIsValid("")) {
         cout << "FAILED 'moo is not the empty string' test case" << endl;
         passed = false;
     }
-    
+
     // 2 - Starts with an m
     if (mooIsValid("noo")) {
         cout << "FAILED 'Starts with an m' test case" << endl;
@@ -91,7 +97,7 @@ bool test_moo() {
 
     // 10 - Even number of capital o's
     if (mooIsValid("MOoo")) {
-        cout << "FAILED 'Even number of o's' test case" << endl;
+        cout << "FAILED 'Even number of capital o's' test case" << endl;
         passed = false;
     }
 
