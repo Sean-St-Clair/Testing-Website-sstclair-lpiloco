@@ -10,6 +10,10 @@ using namespace std;
 
 bool mooIsValid(string moo) {
     bool valid = true;
+    // Lowercase version of moo useful for testing quantities of m's or o's
+    string lowerMoo;
+    for (char c: moo)
+        lowerMoo += tolower(c);
 
     // 0  - A moo is not the empty string
     if(moo == "") {
@@ -17,7 +21,8 @@ bool mooIsValid(string moo) {
     }
 
     // 1  - A valid moo starts with an m
-
+    if (lowerMoo[0] != 'm')
+        valid = false;
     // 2  - Ends with an o
     if (tolower(*moo.end()) != 'o') {
         valid = false;
@@ -32,6 +37,12 @@ bool mooIsValid(string moo) {
         }
     }
     // 5  - No special characters
+    for (char c: moo) {
+        if (!isalpha(c)) {
+            valid = false;
+            break;
+        }
+    }
     // 6  - If the M is capital, the rest can be any case, otherwise must all be lowercase
     if (moo != lowerMoo) {
         valid = false;

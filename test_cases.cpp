@@ -11,7 +11,7 @@ using namespace std;
  * based on the following conditions:
  *
  * 0  - A moo is not the empty string
- * 1  - A valid moo: starts with an m
+ * 1  - Starts with an m
  * 2  - Ends with an o
  * 3  - Contains at least 2 o's
  * 4  - No numbers
@@ -38,7 +38,7 @@ int main() {
 bool test_moo() {
     bool passed = true;
 
-    if (!mooIsValid("Moo")) {
+    if (!mooIsValid("oo")) {
         cout << "Failed Moo test case" << endl;
         passed = false;
     }
