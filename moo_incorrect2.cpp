@@ -7,9 +7,12 @@
 using namespace std;
 
 bool mooIsValid(string moo) {
-    bool valid = false;
+    bool valid = true;
 
-    // 1  - A valid moo: starts with an m
+    // 0  - A moo is not the empty string
+    // 1  - A valid moo starts with an m
+    if (tolower(moo[0]) != 'm')
+        valid = false;
     // 2  - Ends with an o
     // 3  - Contains at least 2 o's
     // 4  - No numbers
