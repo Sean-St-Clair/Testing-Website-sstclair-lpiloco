@@ -3,8 +3,6 @@
 //
 
 #include <string>
-#include <typeinfo>
-#include <vector>
 
 using namespace std;
 
@@ -16,7 +14,7 @@ bool mooIsValid(string moo) {
         lowerMoo += tolower(c);
 
     // 0  - A moo is not the empty string
-    if(moo == "") {
+    if (moo == "") {
         valid = false;
     }
 
