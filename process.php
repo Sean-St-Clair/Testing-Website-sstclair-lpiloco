@@ -19,7 +19,7 @@
         <?php
         
         // TODO: Change the 26 in the next line if you have a different number of incorrect implementations
-        define("NUM_OF_INCORRECT_IMPLS", 2);
+        define("NUM_OF_INCORRECT_IMPLS", 20);
         
         $file_name = basename($_FILES["test-cases"]["name"]);
         if ($file_name != "test_cases.cpp") {
