@@ -3,7 +3,6 @@
 //
 
 #include <string>
-#include <iostream>
 
 using namespace std;
 
@@ -33,7 +32,6 @@ bool mooIsValid(string moo) {
             numMsCapital++;
         }
     }
-    cout << moo << ": " << numOs << " " << numMs << " " << numOsCapital << " " << numMsCapital << " errors: ";
 
     // 1  - A moo is not the empty string
     if (moo == "") {
@@ -41,11 +39,12 @@ bool mooIsValid(string moo) {
     }
 
     // 2  - A valid moo starts with an m
-    if (tolower(*moo.begin()) != 'm')
+    if (moo[0] != 'm') {
         valid = false;
+    }
 
     // 3  - Ends with an o
-    if (tolower(*moo.end()) != 'o') {
+    if (moo[moo.size() - 1] != 'o') {
         valid = false;
     }
 
@@ -112,5 +111,6 @@ bool mooIsValid(string moo) {
         valid = false;
     }
 
+    // If the function hasn't returned yet, it must be a valid moo
     return valid;
 }
