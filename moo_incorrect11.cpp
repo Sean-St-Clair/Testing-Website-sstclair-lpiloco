@@ -68,8 +68,10 @@ bool mooIsValid(string moo) {
     }
 
     // 7  - If the M is capital, the rest can be any case, otherwise must all be lowercase
-    if (moo != lowerMoo) {
-        valid = false;
+    if (numMsCapital == 0) {
+        if (numOsCapital > 0) {
+            valid = false;
+        }
     }
 
     // 8  - Even number of o's
@@ -94,14 +96,18 @@ bool mooIsValid(string moo) {
     // 11 - All m's have to occur at the beginning
     if (lowerMoo.find('o') != string::npos) {
         lowerOIndex = lowerMoo.find('o');
-        if (lowerMoo.find('m', lowerOIndex) != string::npos) {
+        if (lowerMoo.find('m', lowerOIndex) == string::npos) { // FIXME:         if (lowerMoo.find('m', lowerOIndex) != string::npos) {
             valid = false;
         }
     }
 
     // 12 - Either all lowercase or all capital m's
-    if (numMsCapital != numMs) {
-        if (numMsCapital != 0) {
+    if (moo[0] == 'm') {
+        if (numMsCapital > 0) {
+            valid = false;
+        }
+    } else if (moo[0] == 'M') {
+        if (numMsCapital != numMs) {
             valid = false;
         }
     }

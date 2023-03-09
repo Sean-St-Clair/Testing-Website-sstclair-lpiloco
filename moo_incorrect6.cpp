@@ -62,14 +62,16 @@ bool mooIsValid(string moo) {
 
     // 6  - No special characters
     for (char c: moo) {
-        if (!isalpha(c)) {
+        if (isalpha(c)) { // FIXME:         if (!isalpha(c)) {
             valid = false;
         }
     }
 
     // 7  - If the M is capital, the rest can be any case, otherwise must all be lowercase
-    if (moo != lowerMoo) {
-        valid = false;
+    if (numMsCapital == 0) {
+        if (numOsCapital > 0) {
+            valid = false;
+        }
     }
 
     // 8  - Even number of o's
@@ -100,8 +102,12 @@ bool mooIsValid(string moo) {
     }
 
     // 12 - Either all lowercase or all capital m's
-    if (numMsCapital != numMs) {
-        if (numMsCapital != 0) {
+    if (moo[0] == 'm') {
+        if (numMsCapital > 0) {
+            valid = false;
+        }
+    } else if (moo[0] == 'M') {
+        if (numMsCapital != numMs) {
             valid = false;
         }
     }
