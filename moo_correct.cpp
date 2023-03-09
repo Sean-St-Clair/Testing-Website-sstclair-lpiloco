@@ -13,6 +13,10 @@ string mooValidation(string moo) {
 
     // 1  - A valid moo: starts with an m
     // 2  - Ends with an o
+    if (*moo.end() != 'o') {
+
+    }
+
     // 3  - Contains at least 2 o's
     // 4  - No numbers
     // 5  - No special characters
