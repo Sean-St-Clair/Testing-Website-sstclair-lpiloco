@@ -3,17 +3,17 @@
     <head>
         <meta charset="utf-8">
         <!-- TODO: Update the author -->
-        <meta name="author" content="Lisa Dion">
+        <meta name="author" content="lpiloco-sstclair">
         <title>Testing!</title>
         <!-- TODO: Update the description -->
-        <meta name="description" content="This page is for checking the robustness of a testing a moo-validation function in C++.">
+        <meta name="description" content="This page is for checking the validity of a given moo.">
         <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
     </head>
     <body>
     	<header>
     		<h1>CS 120</h1>
-    		<h2>Testing Practice</h2>
-    		<!-- TODO: Change this h3 to your function name -->
+    		<h2>Testing Moo</h2>
+    		<!-- Change this h3 to your function name -->
     		<h3>Moo-Validation Function</h3>
     	</header>
         <?php
