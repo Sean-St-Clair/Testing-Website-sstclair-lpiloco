@@ -90,6 +90,12 @@ bool mooIsValid(string moo) {
     }
 
     // 10 - All m's have to occur at the beginning
+    if (lowerMoo.find('o') != string::npos) {
+        lowerOIndex = lowerMoo.find('o');
+        if (lowerMoo.find('m', lowerOIndex) != string::npos) {
+            valid = false;
+        }
+    }
 
     // 11 - Either all lowercase or all capital m's
     if (numMsCapital != numMs) {
@@ -99,5 +105,6 @@ bool mooIsValid(string moo) {
     }
 
     // 12 - Strictly odd-number of m's
+
     return valid;
 }
