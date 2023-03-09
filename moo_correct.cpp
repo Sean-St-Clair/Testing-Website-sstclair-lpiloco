@@ -3,6 +3,8 @@
 //
 
 #include <string>
+#include <typeinfo>
+#include <vector>
 
 using namespace std;
 
@@ -10,17 +12,31 @@ bool mooIsValid(string moo) {
     bool valid = true;
 
     // 0  - A moo is not the empty string
+    if(moo == "") {
+        valid = false;
+    }
+
     // 1  - A valid moo starts with an m
 
     // 2  - Ends with an o
-    if (*moo.end() != 'o') {
-
+    if (tolower(*moo.end()) != 'o') {
+        valid = false;
     }
 
     // 3  - Contains at least 2 o's
     // 4  - No numbers
+    for (char c: moo) {
+        if (isdigit(c)) {
+            valid = false;
+            break;
+        }
+    }
     // 5  - No special characters
     // 6  - If the M is capital, the rest can be any case, otherwise must all be lowercase
+    if (moo != lowerMoo) {
+        valid = false;
+    }
+
     // 7  - Even number of o's
     // 8  - Capital o's have to precede lowercase o's
     // 9  - Even number of capital o's
