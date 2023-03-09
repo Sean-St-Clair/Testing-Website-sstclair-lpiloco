@@ -42,6 +42,7 @@ bool test_moo() {
         cout << "FAILED 'moo is not the empty string' test case" << endl;
         passed = false;
     }
+    
     // 2 - Starts with an m
     if (mooIsValid("noo")) {
         cout << "FAILED 'Starts with an m' test case" << endl;
@@ -75,6 +76,7 @@ bool test_moo() {
         cout << "FAILED 'M is lowercase, all be lowercase' test case" << endl;
         passed = false;
     }
+
     // 8 - Even number of o's
     if (mooIsValid("mooo")) {
         cout << "FAILED 'Even number of o's' test case" << endl;
@@ -86,6 +88,7 @@ bool test_moo() {
         cout << "FAILED 'Capital o's have to precede lowercase o's' test case" << endl;
         passed = false;
     }
+
     // 10 - Even number of capital o's
     if (mooIsValid("MOoo")) {
         cout << "FAILED 'Even number of o's' test case" << endl;
@@ -97,6 +100,7 @@ bool test_moo() {
         cout << "FAILED 'All m's have to occur at the beginning of the string' test case" << endl;
         passed = false;
     }
+
     // 12 - Either all lowercase or all capital m's
     if (mooIsValid("Mmoo")) {
         cout << "FAILED 'Either all lowercase or all capital m's' test case 1" << endl;

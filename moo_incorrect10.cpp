@@ -85,7 +85,7 @@ bool mooIsValid(string moo) {
     }
 
     // 10  - Even number of capital o's
-    if (numOsCapital % 2 != 0) {
+    if (numOsCapital % 2 == 0) { // FIXME: Should be !=
         valid = false;
     }
 

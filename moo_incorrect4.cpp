@@ -45,7 +45,7 @@ bool mooIsValid(string moo) {
     }
 
     // 4  - Contains at least 2 o's
-    if (numOs < 2) {
+    if (numOs > 2) { // FIXME: Should be <
         valid = false;
     }
 

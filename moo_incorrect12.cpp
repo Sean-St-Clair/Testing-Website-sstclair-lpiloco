@@ -99,7 +99,7 @@ bool mooIsValid(string moo) {
 
     // 12 - Either all lowercase or all capital m's
     if (numMsCapital != numMs) {
-        if (numMsCapital != 0) {
+        if (numMsCapital == 0) { // FIXME: Should be !=
             valid = false;
         }
     }
