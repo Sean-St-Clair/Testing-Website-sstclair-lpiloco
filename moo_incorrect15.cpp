@@ -3,6 +3,7 @@
 //
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -13,6 +14,8 @@ bool mooIsValid(string moo) {
     for (char c: moo) {
         lowerMoo += tolower(c);
     }
+
+    cout << moo;
 
     // The number of Os and Ms in moo
     int numOs = 0;
@@ -36,27 +39,32 @@ bool mooIsValid(string moo) {
     // 1  - A moo is not the empty string
     if (moo == "") {
         valid = false;
+        cout << "1!";
     }
 
     // 2  - A valid moo starts with an m
-    if (moo[0] != 'm') {
+    if (lowerMoo[0] != 'm') {
         valid = false;
+        cout << "2!";
     }
 
     // 3  - Ends with an o
-    if (moo[moo.size() - 1] != 'o') {
+    if (lowerMoo[lowerMoo.size() - 1] != 'o') {
         valid = false;
+        cout << "3!";
     }
 
     // 4  - Contains at least 2 o's
     if (numOs < 2) {
         valid = false;
+        cout << "4!";
     }
 
     // 5  - No numbers
     for (char c: moo) {
         if (isdigit(c)) {
             valid = false;
+            cout << "5!";
         }
     }
 
@@ -64,19 +72,22 @@ bool mooIsValid(string moo) {
     for (char c: moo) {
         if (!isalpha(c)) {
             valid = false;
+            cout << "6!";
         }
     }
 
     // 7  - If the M is capital, the rest can be any case, otherwise must all be lowercase
-    if (numMsCapital == 0) {
+    if (numMsCapital != 0) { // FIXME:     if (numMsCapital == 0) {
         if (numOsCapital > 0) {
             valid = false;
+            cout << "7!";
         }
     }
 
     // 8  - Even number of o's
     if (numOs % 2 != 0) {
         valid = false;
+        cout << "8!";
     }
 
     // 9  - Capital o's have to precede lowercase o's
@@ -85,12 +96,14 @@ bool mooIsValid(string moo) {
         lowerOIndex = moo.find('o');
         if (moo.find('O', lowerOIndex) != string::npos) {
             valid = false;
+            cout << "9!";
         }
     }
 
     // 10  - Even number of capital o's
     if (numOsCapital % 2 != 0) {
         valid = false;
+        cout << "10!";
     }
 
     // 11 - All m's have to occur at the beginning
@@ -98,24 +111,25 @@ bool mooIsValid(string moo) {
         lowerOIndex = lowerMoo.find('o');
         if (lowerMoo.find('m', lowerOIndex) != string::npos) {
             valid = false;
+            cout << "11!";
         }
     }
 
     // 12 - Either all lowercase or all capital m's
-    if (moo[0] == 'm') {
+    if (numMsCapital != numMs) {
         if (numMsCapital > 0) {
             valid = false;
-        }
-    } else if (moo[0] == 'M') {
-        if (numMsCapital != numMs) {
-            valid = false;
+            cout << "12!";
         }
     }
 
     // 13 - Strictly odd-number of m's
     if (numMs % 2 == 0) {
         valid = false;
+        cout << "13!";
     }
+
+    cout << endl;
 
     // If the function hasn't returned yet, it must be a valid moo
     return valid;

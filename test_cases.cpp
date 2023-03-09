@@ -108,8 +108,20 @@ bool test_moo() {
     }
 
     // 12 - Either all lowercase or all capital m's
-    if (mooIsValid("Mmoo")) {
+    if (mooIsValid("Mmmoo")) {
         cout << "FAILED 'Either all lowercase or all capital m's' test case 1" << endl;
+        passed = false;
+    }
+    if (mooIsValid("mMmoo")) {
+        cout << "FAILED 'Either all lowercase or all capital m's' test case 2" << endl;
+        passed = false;
+    }
+    if (!mooIsValid("MMMOO")) {
+        cout << "FAILED 'Either all lowercase or all capital m's' test case 3" << endl;
+        passed = false;
+    }
+    if (!mooIsValid("mmmoo")) {
+        cout << "FAILED 'Either all lowercase or all capital m's' test case 4" << endl;
         passed = false;
     }
 
