@@ -76,6 +76,13 @@ bool mooIsValid(string moo) {
     }
 
     // 8  - Capital o's have to precede lowercase o's
+    int lowerOIndex;
+    if (moo.find('o') != string::npos) {
+        lowerOIndex = moo.find('o');
+        if (moo.find('O', lowerOIndex) != string::npos) {
+            valid = false;
+        }
+    }
 
     // 9  - Even number of capital o's
     if (numOsCapital % 2 != 0) {
