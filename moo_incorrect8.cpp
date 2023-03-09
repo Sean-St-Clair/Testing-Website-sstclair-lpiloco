@@ -71,7 +71,7 @@ bool mooIsValid(string moo) {
     }
 
     // 8  - Even number of o's
-    if (numOs % 2 != 0) {
+    if (numOs % 2 == 0) { // FIXME: Should be !=
         valid = false;
     }
 

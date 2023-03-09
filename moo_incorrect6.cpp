@@ -59,7 +59,7 @@ bool mooIsValid(string moo) {
 
     // 6  - No special characters
     for (char c: moo) {
-        if (!isalpha(c)) {
+        if (isalpha(c)) { // FIXME: Should be !isalpha
             valid = false;
             break;
         }

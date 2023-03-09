@@ -36,7 +36,7 @@ bool mooIsValid(string moo) {
     }
 
     // 2  - A valid moo starts with an m
-    if (tolower(*moo.begin()) != 'm')
+    if (tolower(*moo.begin()) == 'm') // FIXME: Should be !=
         valid = false;
 
     // 3  - Ends with an o
