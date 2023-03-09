@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// Takes a string as input, and returns true if it is a valid moo.
 /*
  * Requires: A string containing the "moo" to be tested
  * Modifies: Nothing

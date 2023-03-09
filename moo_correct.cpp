@@ -36,7 +36,7 @@ bool mooIsValid(string moo) {
     }
 
     // 1  - A valid moo starts with an m
-    if (lowerMoo[0] != 'm')
+    if (tolower(*moo.begin()) != 'm')
         valid = false;
 
     // 2  - Ends with an o
@@ -91,6 +91,7 @@ bool mooIsValid(string moo) {
 
     // 10 - All m's have to occur at the beginning
 
+
     // 11 - Either all lowercase or all capital m's
     if (numMsCapital != numMs) {
         if (numMsCapital != 0) {
@@ -99,5 +100,8 @@ bool mooIsValid(string moo) {
     }
 
     // 12 - Strictly odd-number of m's
+    if (numMs % 2 == 0) {
+        valid = false;
+    }
     return valid;
 }
