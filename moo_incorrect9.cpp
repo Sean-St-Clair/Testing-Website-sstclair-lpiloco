@@ -79,7 +79,7 @@ bool mooIsValid(string moo) {
     int lowerOIndex;
     if (moo.find('o') != string::npos) {
         lowerOIndex = moo.find('o');
-        if (moo.find('O', lowerOIndex) != string::npos) {
+        if (moo.find('O', lowerOIndex) == string::npos) { // FIXME: Should be !=
             valid = false;
         }
     }

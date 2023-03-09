@@ -92,7 +92,6 @@ bool test_moo() {
         passed = false;
     }
 
-    // 11 - All m's have to occur at the beginning
     // 11 - All m's have to occur at the beginning of the string
     if (mooIsValid("omo")) {
         cout << "FAILED 'All m's have to occur at the beginning of the string' test case" << endl;

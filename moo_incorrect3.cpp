@@ -40,7 +40,7 @@ bool mooIsValid(string moo) {
         valid = false;
 
     // 3  - Ends with an o
-    if (tolower(*moo.end()) != 'o') {
+    if (tolower(*moo.end()) == 'o') { // FIXME: Should be !=
         valid = false;
     }
 

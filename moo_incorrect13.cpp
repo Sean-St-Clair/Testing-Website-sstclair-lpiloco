@@ -105,7 +105,7 @@ bool mooIsValid(string moo) {
     }
 
     // 13 - Strictly odd-number of m's
-    if (numMs % 2 == 0) {
+    if (numMs % 2 != 0) { // FIXME: Should be ==
         valid = false;
     }
 

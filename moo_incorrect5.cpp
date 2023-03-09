@@ -51,7 +51,7 @@ bool mooIsValid(string moo) {
 
     // 5  - No numbers
     for (char c: moo) {
-        if (isdigit(c)) {
+        if (!isdigit(c)) { // FIXME: Should be isdigit(c)
             valid = false;
             break;
         }

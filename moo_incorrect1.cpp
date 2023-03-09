@@ -31,7 +31,7 @@ bool mooIsValid(string moo) {
     }
 
     // 1  - A moo is not the empty string
-    if (moo == "") {
+    if (moo != "") { // FIXME: Should be ==
         valid = false;
     }
 

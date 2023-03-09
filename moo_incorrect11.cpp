@@ -92,7 +92,7 @@ bool mooIsValid(string moo) {
     // 11 - All m's have to occur at the beginning
     if (lowerMoo.find('o') != string::npos) {
         lowerOIndex = lowerMoo.find('o');
-        if (lowerMoo.find('m', lowerOIndex) != string::npos) {
+        if (lowerMoo.find('m', lowerOIndex) == string::npos) { // FIXME: Should be !=
             valid = false;
         }
     }

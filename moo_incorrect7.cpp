@@ -66,7 +66,7 @@ bool mooIsValid(string moo) {
     }
 
     // 7  - If the M is capital, the rest can be any case, otherwise must all be lowercase
-    if (moo != lowerMoo) {
+    if (moo == lowerMoo) { // FIXME: Should be !=
         valid = false;
     }
 
