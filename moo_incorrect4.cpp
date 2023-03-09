@@ -102,12 +102,8 @@ bool mooIsValid(string moo) {
     }
 
     // 12 - Either all lowercase or all capital m's
-    if (moo[0] == 'm') {
+    if (numMsCapital != numMs) {
         if (numMsCapital > 0) {
-            valid = false;
-        }
-    } else if (moo[0] == 'M') {
-        if (numMsCapital != numMs) {
             valid = false;
         }
     }
