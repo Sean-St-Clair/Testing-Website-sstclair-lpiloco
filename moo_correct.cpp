@@ -6,12 +6,12 @@
 
 using namespace std;
 
-string mooValidation(string moo) {
-    if (moo == "Moo")
-        return "Valid moo.";
-    return "Invalid moo.";
+bool mooIsValid(string moo) {
+    bool valid = true;
 
-    // 1  - A valid moo: starts with an m
+    // 0  - A moo is not the empty string
+    // 1  - A valid moo starts with an m
+
     // 2  - Ends with an o
     // 3  - Contains at least 2 o's
     // 4  - No numbers
@@ -23,4 +23,5 @@ string mooValidation(string moo) {
     // 10 - All m's have to occur at the beginning
     // 11 - Either all lowercase or all capital m's
     // 12 - Strictly odd-number of m's
+    return valid;
 }
