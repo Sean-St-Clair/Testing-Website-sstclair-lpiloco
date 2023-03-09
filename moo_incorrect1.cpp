@@ -33,7 +33,6 @@ bool mooIsValid(string moo) {
             numMsCapital++;
         }
     }
-    cout << moo << ": " << numOs << " " << numMs << " " << numOsCapital << " " << numMsCapital << " errors: ";
 
     // 1  - A moo is not the empty string
     if (moo != "") { // FIXME: Should be     if (moo == "") {
