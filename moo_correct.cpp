@@ -58,7 +58,6 @@ bool mooIsValid(string moo) {
     for (char c: moo) {
         if (isdigit(c)) {
             valid = false;
-            break;
         }
     }
 
@@ -66,7 +65,6 @@ bool mooIsValid(string moo) {
     for (char c: moo) {
         if (!isalpha(c)) {
             valid = false;
-            break;
         }
     }
 
