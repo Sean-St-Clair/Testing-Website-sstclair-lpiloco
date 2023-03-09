@@ -10,14 +10,30 @@ bool mooIsValid(string moo) {
     bool valid = true;
     // Lowercase version of moo useful for testing quantities of m's or o's
     string lowerMoo;
-    for (char c: moo)
+    for (char c: moo) {
         lowerMoo += tolower(c);
-
-    // 0  - A moo is not the empty string
-    if(moo == "") {
-        valid = false;
     }
 
+    // The number of Os and Ms in moo
+    int numOs, numMs, numOsCapital, numMsCapital;
+    for (char c: moo) {
+        if (c == 'o') {
+            numOs++;
+        } else if (c == 'm') {
+            numMs++;
+        } else if (c == 'O') {
+            numOs++;
+            numOsCapital++;
+        } else if (c == 'M') {
+            numMs++;
+            numMsCapital++;
+        }
+    }
+
+    // 0  - A moo is not the empty string
+    if (moo == "") {
+        valid = false;
+    }
 
     // 1  - A valid moo starts with an m
     if (lowerMoo[0] != 'm')
@@ -28,16 +44,10 @@ bool mooIsValid(string moo) {
         valid = false;
     }
 
-
     // 3  - Contains at least 2 o's
-    int numOs;
-    for (char c: lowerMoo) {
-        if (c == 'o') {
-            numOs++;
-        }
-    }
-    if (numOs < 2)
+    if (numOs < 2) {
         valid = false;
+    }
 
     // 4  - No numbers
     for (char c: moo) {
@@ -46,6 +56,7 @@ bool mooIsValid(string moo) {
             break;
         }
     }
+
     // 5  - No special characters
     for (char c: moo) {
         if (!isalpha(c)) {
@@ -60,10 +71,26 @@ bool mooIsValid(string moo) {
     }
 
     // 7  - Even number of o's
+    if (numOs % 2 != 0) {
+        valid = false;
+    }
+
     // 8  - Capital o's have to precede lowercase o's
+
     // 9  - Even number of capital o's
+    if (numOsCapital % 2 != 0) {
+        valid = false;
+    }
+
     // 10 - All m's have to occur at the beginning
+
     // 11 - Either all lowercase or all capital m's
+    if (numMsCapital != numMs) {
+        if (numMsCapital != 0) {
+            valid = false;
+        }
+    }
+
     // 12 - Strictly odd-number of m's
     return valid;
 }
