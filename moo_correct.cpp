@@ -3,7 +3,6 @@
 //
 
 #include <string>
-#include <iostream>
 
 using namespace std;
 
@@ -40,11 +39,12 @@ bool mooIsValid(string moo) {
     }
 
     // 2  - A valid moo starts with an m
-    if (tolower(*moo.begin()) != 'm')
+    if (moo[0] != 'm') {
         valid = false;
+    }
 
     // 3  - Ends with an o
-    if (tolower(*moo.end()) != 'o') {
+    if (moo[moo.size() - 1] != 'o') {
         valid = false;
     }
 
@@ -57,7 +57,6 @@ bool mooIsValid(string moo) {
     for (char c: moo) {
         if (isdigit(c)) {
             valid = false;
-            break;
         }
     }
 
@@ -65,7 +64,6 @@ bool mooIsValid(string moo) {
     for (char c: moo) {
         if (!isalpha(c)) {
             valid = false;
-            break;
         }
     }
 
@@ -113,5 +111,6 @@ bool mooIsValid(string moo) {
         valid = false;
     }
 
+    // If the function hasn't returned yet, it must be a valid moo
     return valid;
 }
